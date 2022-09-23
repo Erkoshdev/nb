@@ -164,9 +164,19 @@
     </div>
     <div class="projects" id="project">
         <div class="swiper project-slider">
+            <div class="projects-header-xs">
+                <div class="container">
+                    <div class="projects-header-xs-row">
+                        <h6>Проекты</h6>
+                        <div class="project-slide-prev"></div>
+                        <div class="project-slide-next"></div>
+                    </div>
+                </div>
+            </div>
             <div class="swiper-wrapper">
                 <div class="swiper-slide project-slide">
                     <img src="img/content/dostyk.png"/>
+                    <img class="project-img-xs" src="img/content/dostyk-xs.png" alt="">
                     <div class="project-slide-caption">
                         <h6 class="projects-title">ПРОЕКТЫ</h6>
                         <h6 class="project-slide-title">DOSTYK PLAZА</h6>
@@ -176,6 +186,7 @@
                 </div>
                 <div class="swiper-slide project-slide">
                     <img src="img/content/cinemax.png"/>
+                    <img class="project-img-xs" src="img/content/cinemax-xs.png" alt="">
                     <div class="project-slide-caption">
                         <h6 class="projects-title">ПРОЕКТЫ</h6>
                         <h6 class="project-slide-title">CINEMAX</h6>
@@ -184,6 +195,7 @@
                 </div>
                 <div class="swiper-slide project-slide">
                     <img src="img/content/mobile.png"/>
+                    <img class="project-img-xs" src="img/content/mobile-xs.png" alt="">
                     <div class="project-slide-caption">
                         <h6 class="projects-title">ПРОЕКТЫ</h6>
                         <h6 class="project-slide-title">SMART PLAZA </h6>
@@ -202,6 +214,7 @@
                 </div>
                 <div class="swiper-slide project-slide">
                     <img src="img/content/shymkent.png"/>
+                    <img class="project-img-xs" src="img/content/shymkent-xs.png" alt="">
                     <div class="project-slide-caption">
                         <h6 class="projects-title">ПРОЕКТЫ</h6>
                         <h6 class="project-slide-title">SHYMKENT PLAZA</h6>
@@ -302,9 +315,11 @@
 <script>
   //main slider dynamic height
   $(document).ready(function () {
-    let sliderBgHeight = $('.slider-bg').outerHeight();
-    $('.slider').css('min-height', sliderBgHeight)
-  })
+    if($(window).width() > 576) {
+      let sliderBgHeight = $('.slider-bg').outerHeight();
+      $('.slider').css('min-height', sliderBgHeight)
+    }
+  });
 
   //certificate
   lightGallery(document.getElementById('certificatesGallery'));
@@ -314,27 +329,18 @@
     effect: "fade",
     speed: 700,
     loop: true,
+    infinite: true,
     autoplay: {
       delay: 3000,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".project-slide-next",
+      prevEl: ".project-slide-prev",
     },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
-    breakpoints: {
-      320: {
-        direction: "vertical",
-        slidesPerView: 1,
-      },
-      578: {
-        direction: "horizontal",
-        slidesPerView: 1,
-      }
-    }
   });
 
   //certificate slider

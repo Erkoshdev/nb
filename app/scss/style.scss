@@ -381,7 +381,7 @@ body {
 
 .partners {
   background: #67A80E;
-  margin-top: -80px;
+  margin-top: -130px;
   padding: 170px 0 200px 0;
   position: relative;
   z-index: 2;
@@ -530,6 +530,7 @@ body {
 
 .footer {
   padding: 110px 0 0 0;
+  background: #c3e3ff;
 }
 
 .footer-bottom {
@@ -566,6 +567,13 @@ body {
   justify-content: center;
 }
 
+.projects-header-xs {
+  display: none;
+}
+
+.project-img-xs {
+  display: none;
+}
 
 
 
